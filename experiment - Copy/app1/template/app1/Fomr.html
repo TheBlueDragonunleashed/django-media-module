@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Hello from Room</h1>
+
+<div>
+    <form method="post" action="{% url 'add' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+
+
+        {{form.as_p}}
+        <input type="submit" value="submit">
+
+
+    </form>
+     <h1>Hey guy{{room.name}}</h1>
+
+
+</div>
+Ended by::::Form room
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>direct solar radiation, is that harmful.</h1>
+<h1>Also this is check . html .</h1>
+
+<a href="{% url 'form' %}">Add new class</a>
+<a href="">Train the model</a>
+<a href="">check signature</a>
+<a href="">Results</a>
+
+    {% for r in room %}
+        {{r.name}}
+    {% endfor %}
+
+{% endblock %}
+
+</body>
+</html>

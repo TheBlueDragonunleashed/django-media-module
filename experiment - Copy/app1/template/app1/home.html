@@ -1,0 +1,60 @@
+
+{% extends 'main.html' %}
+
+{% block content %}
+<!--<style>-->
+<!--    .home-container{-->
+<!--    display: grid;-->
+<!--    grid-template-columns: 1fr 3fr;-->
+<!--    }-->
+<!--</style>-->
+
+<h1>This is home . html</h1>
+
+    {% if request.user.is_authenticated %}
+        Welcome guys
+         hello!!!!!!{{request.user}}
+
+
+
+
+
+    <a href="{% url 'logout' %}"> <h1>logout</h1></a>
+
+
+    {% for r in room %}
+        {{r.name}}
+    {% endfor %}
+
+
+    {% else %}
+
+
+
+<div>
+    <form method="post" action="lr/">
+        {% csrf_token %}
+        <label>Username:</label>
+        <input type="text" name="username" placeholder="Enter username">
+
+        <label>Password:</label>
+        <input type="password" name="password" placeholder="Enter password">
+
+      <input type="submit" value="Login">
+<!--        {{form.as_p}}-->
+        <p>Haven't signup?</p>
+    </form>
+<!--     <h1>Hey guy{{room.name}}</h1>-->
+</div>
+
+
+    {% endif %}
+
+
+
+
+
+
+
+
+{% endblock %}
